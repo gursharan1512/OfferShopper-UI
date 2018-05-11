@@ -1,0 +1,135 @@
+.dot {
+  /* color: lightcoral; */
+  color:#018b8b;
+  font-size:45px;
+}
+
+.loggedIn-name {
+  cursor: pointer;
+}
+
+.text-color {
+  color: darkkhaki
+}
+
+.text-heading {
+  color: peachpuff
+}
+
+#shop-button {
+  cursor: pointer;
+}
+
+nav a {
+  font-family: 'Julius Sans One', sans-serif,'Sree Krushnadevaraya','Suranna','Ramaraja',"Mukta Malar";
+  text-decoration: black;
+  color: #a49dad;
+}
+
+nav a:hover {
+  color: #e9967a;
+}
+
+div a:hover {
+  color:black;
+}
+
+.dropdown-item {
+  display: flex;
+  background: rgb(48, 52, 56)
+}
+
+.dropdown-item:hover {
+  background: white;
+  color:  black;
+}
+
+.profile {
+  list-style: none;
+  display: inline-flex;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    font-family: 'Black Han Sans', sans-serif,'Sree Krushnadevaraya','Suranna','Ramaraja',"Mukta Malar";
+    font-size: 2rem;
+    color: black;
+    padding-left:50px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .logo {
+    font-family: 'Black Han Sans', sans-serif,'Sree Krushnadevaraya','Suranna','Ramaraja',"Mukta Malar";
+    font-size: 1.6rem !important;
+    color: black;
+  }
+
+  .active {
+    border: 1px solid #018b8b;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .header-toggle {
+    margin-right: 3rem;
+  }
+}
+
+.nav-text {
+  font-size:15px;
+  margin-left:20px;
+  margin-top:10px;
+}
+
+
+.text-pride {
+  color: #fd4747;
+}
+
+.active {
+  border: 1px solid #018b8b;
+}
+
+.logout{
+  padding:10px;
+  border: 1px solid #018b8b;
+  cursor: pointer;
+}
+
+.alert-styling{
+ max-width: 30rem;
+ max-height: 5rem;
+ background: #fd4747;
+ z-index: 1;
+ position: fixed;
+ top: 6rem;
+ opacity: 0.9;
+ color: white;
+ right: 0.8rem;
+}
+
+.alert-content{
+  opacity: 1;
+  font-size: 1rem;
+  color: white;
+}
+
+.display{
+  display: inline;
+}
+
+@media (max-width: 576px) {
+  .logo {
+    font-size: 1rem;
+  }
+}
+
+.imgHeight{
+  height: 2px;
+  width:  20px;
+}
+
+.wheel{
+  padding-top:8px;
+}

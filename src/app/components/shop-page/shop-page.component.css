@@ -1,0 +1,75 @@
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .sorting-dropdown {
+    width: 150px !important;
+  }
+}
+
+#suggestion {
+    border: tan;
+    color:black;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace,'Sree Krushnadevaraya','Suranna','Ramaraja',"Mukta Malar";
+
+}
+#suggestion:hover{
+    background-color: rgb(235, 229, 229);
+}
+
+
+.search-box{
+  width:400px;
+}
+
+.search-btn{
+  width:40px;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.default-text {
+  size:2rem;
+  text-align: center;
+}
+
+.card-w{
+	cursor: pointer;
+  border: none;
+	/*max-width: 18rem;*/
+/*  width: 28rem;
+	min-height: 22rem;
+	max-height: 22rem;*/
+}
+
+.card-data {
+	margin-left: -1.1rem;
+	font-family: 'Julius Sans One', sans-serif;
+	margin-top: -0.5rem;
+}
+
+.card-discount {
+	font-family: 'Poiret One', cursive;
+}
+
+.card-heading {
+	font-size: 0.9rem;
+}
+
+.btn-dropdown {
+  background-color: #018b8b;
+  color: white;
+  width: 100%;
+}
+
+.map {
+  height: 15rem;
+  max-height: 25rem;
+  width: 100%;
+}
+
+.vendor-route{
+  text-decoration: none;
+  color: gray;
+}

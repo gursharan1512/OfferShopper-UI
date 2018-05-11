@@ -1,0 +1,55 @@
+<!-- wishlist header -->
+<div class="wishlist-header px-2">
+  <img src="../../../../../assets/wishcart_jumbo.png" class="img-fluid">
+  <div class="wishlist-header-content d-flex align-items-center justify-content-center">
+    {{ 'USER.WISHLIST' | translate }}
+  </div>
+</div>
+<!-- wishlist header ended -->
+<!-- display wishlist offers -->
+<div class="wishlist-offer">
+  <!-- if wishlist have offers then display -->
+  <div class="container" *ngIf="wishlistOffers.length">
+      <!-- iterating through wishlistOffers array to print wishlist offers -->
+      <div class="row">
+          <div class="col-sm-12 col-md-4 col-lg-3 card-group mb-5" *ngFor=" let result of wishlistOffers">
+            {{productPrice(result.offerOriginalPrice,result.offerDiscount)}}
+            <div class="card card-w text-dark my-5 img-over-button">
+              <div class="card-img-overlay">
+                <span class="badge badge-pill badge-info card-discount p-3">{{result.offerDiscount}}{{ 'HOMEPAGE.PRODUCT-HEADER.OFF' | translate }}</span>
+                <div class="btn-group middle-button-small d-block d-lg-none d-flex align-items-end justify-content-center" *ngIf="result">
+                    <button class="btn btn-success" type="button" (click)="deleteOffer(result.offerId,result.userId)" data-toggle="tooltip" data-placement="bottom"  title="{{ 'BUTTONS.DELETE' | translate }}"><i class="fas fa-trash-alt"></i> </button>
+                  </div>
+                  <div class="middle-button d-none d-lg-block">
+                  <div class="middle-button-data">
+                    <button class="btn btn-dark" type="button" (click)="deleteOffer(result.offerId,result.userId)" data-toggle="tooltip" data-placement="bottom"  title="{{ 'BUTTONS.DELETE' | translate }}"><i class="fas fa-trash-alt"></i> {{ 'BUTTONS.DELETE' | translate }}</button>
+                  </div>
+                </div>
+              </div>
+              <img class="card-img card-w card-image" src="{{result.offerImage}}" alt="Card image">
+              <div class="card-body card-data">
+                <div class="row">
+                  <div class="col-8">
+                    <a [routerLink]="['/', 'product',result.userId,result.offerId]"><div class="card-heading text-truncate">{{result.offerTitle}}</div></a>
+                  </div>
+                  <div class="col-4">
+                    <span class="fa fa-star mx-2"></span>{{result.offerRating}}
+                  </div>
+                  <div class="col-12">
+                    <span class="card-price">{{ 'HOMEPAGE.PRODUCT-LIST.RS' | translate }}<del>{{result.offerOriginalPrice}}</del></span>
+                    <span class="card-discounted-price">{{priceAfterDiscount}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+  <!-- if wishlist is empty -->
+  <div *ngIf="!wishlistOffers.length" class="d-flex justify-content-center">
+    <h1>{{ 'USER.EMPTY' | translate }}</h1>
+  </div>
+</div>
+</div>

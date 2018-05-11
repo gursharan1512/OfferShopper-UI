@@ -1,0 +1,63 @@
+footer {
+    font-family: 'Poiret One';
+    background: black;
+    padding-left: 8rem;
+    position: relative;
+}
+
+a {
+    color: white
+}
+
+.text-color {
+    color: white
+}
+
+.text-heading {
+    text-decoration: bold;
+    text-transform: capitalize;
+    font-family: 'Holtwood One SC', serif,'Sree Krushnadevaraya','Suranna','Ramaraja',"Mukta Malar";
+    color: white;
+    font-size: 18px;
+}
+
+.text-lead {
+    font-family: 'Julius Sans One', sans-serif,'Sree Krushnadevaraya','Suranna','Ramaraja',"Mukta Malar";
+    color: lavender;
+    font-size: 13px;
+}
+
+.social-media {
+    display: inline-flex;
+    list-style: none;
+    padding-left: 0px;
+}
+
+.social-media li {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+@media (max-width: 575.98px) {
+    .container-fluid {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
+
+.social-media > li {
+    padding: 1rem;
+}
+
+.links, .help, .categories {
+    padding-left: 0px;
+    list-style: none
+}
+
+.nm-t{
+    margin-top: -35px;
+}
+
+li {
+    cursor: pointer;
+}

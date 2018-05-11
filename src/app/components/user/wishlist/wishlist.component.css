@@ -1,0 +1,319 @@
+@media (min-width: 992px) {
+	.middle-button {
+	  position: absolute;
+	  top: 0;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  height: 100%;
+	  width: 100%;
+	  opacity: 0;
+	  transition: .5s ease;
+	  background: rgba(0, 0, 0, 0.3);
+	}
+
+	.middle-button-data {
+		color: white;
+	  font-size: 20px;
+	  position: absolute;
+	  top: 90%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  -ms-transform: translate(-50%, -50%);
+	  text-align: center;
+	}
+
+	.middle-button button {
+		border-radius: 50px;
+	}
+
+	.img-over-button {
+		position: relative;
+	    width: 50%;
+	}
+
+	.card-image {
+		display: block;
+	  width: 100%;
+	  height: auto;
+	}
+
+	.img-over-button:hover .middle-button {
+	  opacity: 1;
+	}
+}
+
+@media (max-width: 991.98px) {
+
+	.middle-button-small {
+		height: 88%;
+	}
+
+	.middle-button-small button {
+		width: 90px;
+	}
+}
+
+.wishlist-header {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	}
+.wishlist-header-content {
+	  width: 100%;
+	  height: 100%;
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  color:white;
+	}
+@media (max-width: 767.98px) {
+	.wishlist-header-content {
+	  font-size: 2rem;
+	}
+}
+
+@media (min-width: 768px){
+	.wishlist-header-content {
+	  font-size: 3rem;
+	}
+}
+
+.description-container {
+	font-size: 0.9rem;
+	margin-top: 1rem;
+}
+.offer {
+	height: 200px;
+}
+
+.offer-center {
+	margin: auto;
+	position: relative;
+}
+
+.display-offer-image img{
+	width: 110px;
+}
+
+.offer-image {
+	padding-top: 27px;
+	padding-bottom: 25px;
+	padding-left: 30px;
+}
+
+@media (max-width: 575.98px) {
+	.show-offer-border {
+		margin-left: -7px;
+		margin-right: -7px;
+	}
+}
+
+.container {
+	position: relative;
+}
+
+.container-button {
+	position: absolute;
+	right: 7px;
+	bottom: 7px;
+	border-radius: 22px;
+}
+
+.container-button-small {
+	position: absolute;
+	right: 15px;
+	bottom: 0;
+	border-radius: 22px;
+}
+
+del {
+	color: #999;
+	font-size: 13px;
+}
+
+.offer-deleted-price-small {
+	color: #999;
+	font-size: 16px;
+}
+
+.text-before-del-large {
+	color: #999;
+	font-size: 15px;
+}
+
+.offer-small {
+	position: relative;
+}
+
+.offer-discount-small {
+	position: absolute;
+	bottom: 8px;
+	left: 8px;
+	color: red;
+}
+
+.offer-discount-large {
+	color: red;
+}
+
+.offer-title-large {
+	width: 100%;
+	height: 100%;
+}
+
+.wishlist-offer {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.description-container {
+	font-size: 0.9rem;
+	margin-top: 1rem;
+}
+.offer {
+	height: 200px;
+}
+
+.offer-center {
+	position: relative;
+	margin-top: 22px;
+	margin-bottom: 0px;
+}
+
+.display-offer-image img{
+	width: 110px;
+}
+
+.offer-image {
+	padding-top: 27px;
+	padding-bottom: 25px;
+	padding-left: 30px;
+}
+
+@media (max-width: 575.98px) {
+	.show-offer-border {
+		margin-left: -7px;
+		margin-right: -7px;
+	}
+}
+
+.container {
+	position: relative;
+}
+
+.container-button {
+	position: absolute;
+	right: 7px;
+	bottom: 7px;
+	border-radius: 22px;
+}
+
+.container-button-small {
+	position: absolute;
+	right: 15px;
+	bottom: 0;
+	border-radius: 22px;
+}
+
+del {
+	color: #999;
+	font-size: 13px;
+}
+
+.offer-deleted-price-small {
+	color: #999;
+	font-size: 16px;
+}
+
+.text-before-del-large {
+	color: #999;
+	font-size: 15px;
+}
+
+.offer-small {
+	position: relative;
+}
+
+.offer-discount-small {
+	position: absolute;
+	bottom: 8px;
+	left: 8px;
+	color: red;
+}
+
+.offer-discount-large {
+	color: red;
+}
+
+.offer-title-large {
+	width: 100%;
+	height: 100%;
+}
+
+#subscribe {
+	height: 3rem;
+}
+
+.shop-header {
+	margin-left:5.3rem;
+}
+
+.map {
+	height: 25rem;
+	max-height: 25rem;
+}
+
+.address {
+		font-size: 0.8rem;
+		margin-top: -3rem;
+		margin-left: 0.3rem;
+}
+
+.btn-subs {
+	background-color: #018b8b;
+	color: white;
+}
+
+.text-pride {
+	color: #018b8b;
+}
+
+
+.feedback-img {
+	height: 10rem;
+}
+
+.card-w{
+	cursor: pointer;
+	max-width: 18rem;
+	min-height: 22rem;
+	max-height: 22rem;
+	border: 0px;
+}
+
+.card-data {
+	margin-left: -1.1rem;
+	font-family: 'Julius Sans One', sans-serif;
+	margin-top: -0.5rem;
+}
+
+.card-discount {
+	font-family: 'Poiret One', cursive;
+}
+
+.card-heading {
+	color:black;
+	font-size: 0.9rem;
+}
+
+.card-discounted-price {
+	color:red;
+}
+
+.over {
+	max-height: 3rem;
+}
+
+.cursor {
+	cursor: pointer
+}

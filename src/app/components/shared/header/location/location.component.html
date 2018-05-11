@@ -1,0 +1,40 @@
+<div class="nav justify-content-between">
+  <button  id="_location1" type="button"  data-toggle="modal" data-target="#Modal" class= " btn btn-light search-btn">
+    <img class="locationimg" src= "http://flaticons.net/icons/Miscellaneous/Maps.png"> {{obj.a}}
+  </button>
+  <!-- <span id="_location">
+    {{obj.a}}
+  </span> -->
+ <!-- Modal -->
+ <div class="modal fade" id="Modal" role="dialog">
+  <div class="modal-dialog">
+   <!-- Modal content-->
+   <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title" id= "Modallabel">{{ 'HEADER.LOCATION.CITY' | translate }}</h4>
+    </div>
+    <!--         this is for body for dropdown to select city-->
+    <div class="modal-body">
+      <select class="dropdown btn btn-light dropdown-toggle mr-2 col-md-2 col-lg-2 col-sm-2" [(ngModel)]="selected">
+       <option *ngFor=" let city of cities" value={{city}}>{{city}}</option>
+     </select>
+   </div>
+   <p>{{selected}}</p>
+   <div class="modal-footer">
+    <span>
+      <button type="button" class="btn btn-default " data-dismiss="modal">{{ 'HEADER.LOCATION.SKIP' | translate }}</button>
+      <button type="button" class="btn btn-default " data-dismiss="modal" (click)="favouriteCity(selected)">{{ 'HEADER.LOCATION.CONTINUE' | translate }}</button>
+    </span>
+  </div>
+</div>
+</div>
+</div>
+<div class="lang">
+  <label class="text-heading">
+   <!-- {{ 'HOME.SELECT' | translate }}-->
+    <select class="text-lang btn btn-light select-btn dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" #langSelect (change)="translate.use(langSelect.value)">
+    <option class="text-lang btn btn-light select-btn dropdown-menu-right" *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+    </select>
+  </label>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+
+#_location1
+{
+	font-family: 'Poiret One', cursive;
+	text-transform: uppercase;
+	letter-spacing: 0.25rem;
+	font-weight: bold;
+	font-variant-caps: titling-case;
+	color:white;
+	border:none;
+	background-color: transparent;
+}
+
+.nav {
+    background: black;
+}
+.locationimg
+{
+	height: 1rem;
+	width: 1rem;
+	padding-left: 0px;
+	margin-left: 0px;
+}
+
+
+#Modallabel
+{
+	font-family: 'Julius Sans One', sans-serif,'Sree Krushnadevaraya','Suranna','Ramaraja',"Mukta Malar";
+}
+
+.text-heading {
+    text-decoration: bold;
+    text-transform: capitalize;
+    font-family: 'Holtwood One SC', 'Sree Krushnadevaraya','Suranna','Ramaraja',"Mukta Malar",serif;
+    color: white;
+    font-size: 18px;
+}
+
+.text-lead {
+    font-family: 'Julius Sans One', sans-serif,'Sree Krushnadevaraya','Suranna','Ramaraja',"Mukta Malar";
+    color: lavender;
+    font-size: 13px;
+}
+
+.lang {
+	float: right
+}
+
+.text-lang {
+    font-family: 'Julius Sans One', sans-serif,'Sree Krushnadevaraya','Suranna','Ramaraja',"Mukta Malar";
+    color: darkslategrey;
+	font-size: 1rem;
+	padding: 1px;
+	min-height: 2rem;
+}
+.select-btn
+{
+	background-color: black;
+	color:white;
+	border:none;
+	border-width: 0.25rem;
+	margin-top: 0.50rem;
+	margin-right: 0.50rem;
+}

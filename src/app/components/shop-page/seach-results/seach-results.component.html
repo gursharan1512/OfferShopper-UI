@@ -1,0 +1,56 @@
+  <div class="container-fluid" *ngIf="results.length">
+    <div class="row">
+      <div class="col-md-6 col-lg-4 card-group mb-3 px-0" *ngFor=" let result of results | paginate:{itemsPerPage : 6, currentPage : p}">
+        {{productPrice(result.originalPrice,result.discount)}}
+        <div class="card card-w text-dark m-5 img-over-button">
+          <div class="card-img-overlay px-0">
+            <span class="badge badge-pill badge-info card-discount p-3 ml-3">{{result.discount}}{{ 'HOMEPAGE.PRODUCT-HEADER.OFF' | translate }}</span>
+            <div class="btn-group middle-button-large d-block d-lg-none d-flex align-items-end justify-content-center" *ngIf="user; else elseBlock">
+              <button class="btn btn-success ml-0 mr-2" type="button" (click)="addToCarrybag(result)"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+              <button class="btn btn-success" type="button" (click)="addToWishlist(result)"><i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
+            </div>
+            <div class="middle-button d-none d-lg-block" *ngIf="user; else elseBlock">
+              <div class="middle-button-data">
+                <button class="btn btn-dark mb-2" type="button" (click)="addToWishlist(result)"><i class="fa fa-shopping-basket" aria-hidden="true"></i> {{ 'BUTTONS.WISHLIST' | translate }}</button>
+                <button class="btn btn-dark" type="button" (click)="addToCarrybag(result)"><i class="fa fa-cart-plus" aria-hidden="true"></i> {{ 'BUTTONS.CARRYBAG' | translate }}</button>              
+              </div>
+            </div>
+            <ng-template #elseBlock>
+              <div class="btn-group middle-button-large d-block d-lg-none d-flex align-items-end justify-content-center">
+                <button class="btn btn-success ml-0 mr-2" type="button" (click)="notLogin()"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+                <button class="btn btn-success" type="button" (click)="notLogin()"><i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
+              </div>
+              <div class="middle-button d-none d-lg-block">
+              <div class="middle-button-data">
+                <button class="btn btn-dark mb-2" type="button" (click)="notLogin()"><i class="fa fa-shopping-basket" aria-hidden="true"></i>{{ 'BUTTONS.WISHLIST' | translate }}</button>
+                <button class="btn btn-dark" type="button" (click)="notLogin()"><i class="fa fa-cart-plus" aria-hidden="true"></i>{{ 'BUTTONS.CARRYBAG' | translate }}</button>              
+              </div>
+            </div>
+            </ng-template>
+          </div>
+          <img class="card-img card-w card-image" [src]="result.imageURL" alt="Card image">
+          <div class="card-body card-data">
+            <div class="row">
+              <div class="col-8">
+                <a [routerLink]="['/', 'product',result.userId,result.offerId]"><span class="card-heading">{{result.offerTitle}}</span></a>
+              </div>
+              <div class="col-4">
+                <span class="fa fa-star mx-2"></span>{{result.offerRating}}
+              </div>
+              <div class="col-12">
+                <span class="card-price">{{ 'HOMEPAGE.PRODUCT-LIST.RS' | translate }}<del>{{result.originalPrice}}</del></span>
+                <span class="card-discounted-price">{{priceAfterDiscount}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+
+
+    <div class="text-center pt-5">
+      <pagination-controls (pageChange)="p=$event"></pagination-controls>
+    </div>
+  </div>

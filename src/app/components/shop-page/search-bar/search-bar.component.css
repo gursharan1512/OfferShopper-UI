@@ -1,0 +1,111 @@
+@media (max-width: 575.98px) {
+  #search {
+    width: 100%;
+  }
+  .search-categories {
+    display: none;
+  }
+
+  .search-box {
+    width: 75%;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+  }
+
+  .search-btn {
+    width: 25%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+
+  #search {
+    width: 100%;
+  }
+
+  .search-categories {
+    width: 20%;
+  }
+
+  .search-box{
+    width: 60%;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  .search-btn{
+    width:20% !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .search-box{
+    width: 30rem;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  .search-btn{
+    width:120px !important;
+  }
+}
+
+#suggestion {
+    border: tan;
+    color:black;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace,'Sree Krushnadevaraya','Suranna','Ramaraja',"Mukta Malar";
+
+}
+#suggestion:hover{
+    background-color: rgb(235, 229, 229);
+}
+
+.navbar-light  {
+    background-color: #ffffff;
+    margin-top: .50rem;
+}
+
+.btn-light
+{
+	color:white;
+}
+
+.search-box{
+  height: 3rem;
+  outline: none;
+  margin-right: 0px;
+
+  border-color: #018b8b;
+}
+
+.search-btn{
+  width:4rem;
+  height: 3rem;
+  margin-left: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  background-color: #018b8b;
+  border-color:#018b8b;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+.dropdown
+{
+  height:3rem;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-color:#018b8b;
+  background-color: #018b8b;
+
+}

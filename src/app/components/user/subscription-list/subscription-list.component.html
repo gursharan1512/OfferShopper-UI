@@ -1,0 +1,32 @@
+<!-- This page will display the vendor subscribed by the userId -->
+<div class="wishlist-header px-2">
+  <img src="../../../../../assets/wishcart_jumbo.png" class="img-fluid">
+  <div class="wishlist-header-content d-flex align-items-center justify-content-center">
+    {{ 'USER.SUBSCRIBE' | translate }}
+  </div>
+</div>
+<div *ngIf="subscribeServiceList.length; else elseblock;then thenblock;" class="pt-2"></div>
+<ng-template #thenblock>
+  <div class="container mt-2">
+    <div class="row">
+      <div class="col-md-4 d-flex justify-content-center mb-2" *ngFor="let subscriptionlist of subscribeServiceList">
+        <!-- Content -->
+        <div class="card vendor-card" style="width: 18rem;">
+          <div class="card-body  text-center">
+            <h5 class="card-title shopname" [routerLink]="['/','vendorInfo',subscriptionlist.vendorId]">{{subscriptionlist.shopName}}</h5>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"  aria-pressed="false" autocomplete="off" [routerLink]="['/', 'vendorInfo',subscriptionlist.vendorId]" >
+              <i class="fas fa-id-card"></i> {{ 'BUTTONS.SEE-MORE' | translate }}
+            </button>
+            <button type="button" class="btn btn-dark my-2 my-sm-0 ml-md-5 ml-lg-3 ml-sm-2" data-toggle="button" aria-pressed="false"  autocomplete="off" (click)="deleteSubscriptions(subscriptionlist.userId,subscriptionlist.vendorId)" data-toggle="tooltip" data-placement="bottom"  title="{{ 'BUTTONS.DELETE' | translate }}"><i class="fas fa-trash-alt" ></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #elseblock>
+  <div class="container mt-2">
+   <h4>{{ 'USER.SUBSCRIPTION.OOPS' | translate }}</h4>
+ </div>
+</ng-template>

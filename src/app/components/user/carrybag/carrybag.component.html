@@ -1,0 +1,108 @@
+<div class="carrybag-header px-2">
+  <img src="../../../../assets/wishcart_jumbo.png" class="img-fluid">
+  <div class="carrybag-header-content d-flex align-items-center justify-content-center">
+    {{ 'USER.CARRYBAG' | translate }}
+  </div>
+</div>
+
+<!-- This will display the offers added in Carrybag -->
+<div *ngIf="carryBagOffers.length">
+
+  <div *ngIf="!carryBagOffers.length" class="carryempty">
+    <h1>{{ 'USER.EMPTY' | translate }}</h1>
+  </div>
+  <!-- This div will create the cards of offers added in carrybag -->
+  <div class="jumbotron bg-white">
+  <div class="container-fluid">
+      <div class="row">
+          <div class=" card-deck col-sm-12 col-md-6 col-lg-4 mb-5" *ngFor=" let offerList of carryBagOffers">
+              {{productPrice(offerList.offerOriginalPrice,offerList.offerDiscount)}}
+              <div class="card card-w text-dark my-5 img-over-button">
+              <div class="card-img-overlay">
+                <span class="badge badge-pill badge-info card-discount p-3">{{offerList.offerDiscount}}{{ 'HOMEPAGE.PRODUCT-HEADER.OFF' | translate }}</span>
+                <div class="btn-group middle-button-small d-block d-lg-none d-flex align-items-end justify-content-center" *ngIf="offerList">
+                    <button class="btn btn-success" type="button" (click)="deleteOffer(offerList.userId,offerList.offerId)" data-toggle="tooltip" data-placement="bottom"  title="{{ 'BUTTONS.DELETE' | translate }}"><i class="fas fa-trash-alt" ></i> </button>
+                  </div>
+                <div class="middle-button d-none d-lg-block">
+                  <div class="middle-button-data">
+                    <button class="btn btn-dark mb-2" type="button" (click)="deleteOffer(offerList.userId,offerList.offerId)" data-toggle="tooltip" data-placement="bottom"  title="{{ 'BUTTONS.DELETE' | translate }}"><i class="fas fa-trash-alt" ></i> {{ 'BUTTONS.DELETE' | translate }}</button>
+                    <button class="btn btn-dark mb-2" type="button" (click)="checkFeedbackExistence(offerList.offerId,offerList.userId)"  data-toggle="tooltip" data-placement="bottom"  title="{{ 'BUTTONS.ADD-FEEDBACK' | translate }}"><i class="fas fa-comment-dots"></i> {{ 'BUTTONS.ADD-FEEDBACK' | translate }}</button>
+                    <div data-toggle="modal" data-target="#feedbackModal"  #myModal ></div>
+                    <button class="btn btn-dark" type="button" (click)="couponGenerate(offerList.userId,offerList.offerId,offerList.vendorId)" data-toggle="tooltip" data-placement="bottom"  title="{{ 'BUTTONS.GEN-COUPON' | translate }}"> <i class="fas fa-ticket-alt"></i> {{ 'BUTTONS.GEN-COUPON' | translate }}</button>
+                    <div data-toggle="modal" data-target="#couponModal" #coupModal ></div>
+                  </div>
+                </div>
+              </div>
+              <img class="card-img card-w card-image" src={{offerList.offerImage}} alt="Card image">
+              <div class="card-body card-data px-0">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <a [routerLink]="['/', 'product',offerList.userId,offerList.offerId]"><div class=" card-heading  text-truncate">{{offerList.offerTitle}}</div></a>
+                  </div>
+                  <div class="col-sm-4">
+                    <span class="fa fa-star mx-2"></span>{{offerList.offerRating}}
+                  </div>
+                  <div class="col-sm-12">
+                    <span class="card-price">{{ 'HOMEPAGE.PRODUCT-LIST.RS' | translate }}<del>{{offerList.offerOriginalPrice}}</del></span>
+                    <span class="card-discounted-price">{{priceAfterDiscount}}</span>
+                  </div>
+
+                  <div class="col-12 d-none d-md-block offer-center">
+                    {{ 'PRODUCT-PAGE.VALIDITY' | translate }}{{offerList.offerValidity | date}}
+                  </div>
+                  <div class="container-fluid">
+                    <div class="row d-block d-lg-none text-center">
+                        <button class="btn btn-dark col-5 " type="button" (click)="couponGenerate(offerList.userId,offerList.offerId,offerList.vendorId)" data-toggle="tooltip" data-placement="bottom"  title="{{ 'BUTTONS.GEN-COUPON' | translate }}"> <i class="fas fa-ticket-alt"></i></button>
+                        <span data-toggle="modal" data-target="#couponModal" #coupModal ></span>
+                        <button class="btn btn-dark col-5" type="button" (click)="checkFeedbackExistence(offerList.offerId,offerList.userId)"  data-toggle="tooltip" data-placement="bottom"  title="{{ 'BUTTONS.ADD-FEEDBACK' | translate }}"><i class="fas fa-comment-dots"></i></button>
+                        <div data-toggle="modal" data-target="#feedbackModal"  #myModal ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+  <!-- This div will create the modal to get feedback -->
+  <div id="feedbackModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="rating"> {{ 'HOMEPAGE.PRODUCT-LIST.RATING' | translate }}</label>
+                <input type="rating" class="form-control" id="rating" [(ngModel)]="rating" [ngModelOptions]="{standalone: true}">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="feedback">{{ 'USER.CARRYBAG-COMP.FEEDBACK' | translate }} </label>
+                <input type="feedback" class="form-control" id="feedback" [(ngModel)]="feedback" [ngModelOptions]="{standalone: true}">
+              </div>
+            </div>
+            <button type="button" class="btn button justify-content-center" (click)="addfeedback()">{{ 'BUTTONS.SUBMIT' | translate }}</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">{{ 'BUTTONS.CLOSE' | translate }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- This div will create the modal to display couponId  -->
+  <div id="couponModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>{{ 'USER.CARRYBAG-COMP.COUP-ID' | translate }}</p>{{couponId}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">{{ 'BUTTONS.CLOSE' | translate }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
